@@ -1,4 +1,4 @@
-# Evolutionary AI Engine (C++ OOP Framework)
+# Evolution Simulator Engine (C++ OOP Framework)
 ### Descriere Proiect
 
 
