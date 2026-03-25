@@ -158,7 +158,7 @@ public:
 
     float getFitness() const { return fitnessScore; }
     const Chromosome& getDna() const { return dna; }
-    const std::string& getName() const { return name; }
+    [[maybe_unused]] const std::string& getName() const { return name; }
 
     // operator<<
     friend std::ostream& operator<<(std::ostream& os, const Organism& o) {
@@ -175,7 +175,7 @@ private:
 
 public:
     // constructor cu parametri
-    Environment(int startGen = 0) : currentGeneration(startGen) {}
+    explicit Environment(int startGen = 0) : currentGeneration(startGen) {}
 
     void addOrganism(const Organism& org) {
         population.push_back(org);
@@ -281,9 +281,5 @@ int main() {
     std::cout << "\nSimulare incheiata cu succes. Demo complet.\n";
 
 
-    // liniștim cppcheck-ul
-    std::cout << "Debug: Primul nume de individ: " << earth.getOrganisms()[0].getName() << "\n";
-    Example ex;
-    ex.g();
-    return 0; 
+   
 }
