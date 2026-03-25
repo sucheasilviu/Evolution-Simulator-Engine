@@ -158,7 +158,12 @@ public:
 
     float getFitness() const { return fitnessScore; }
     const Chromosome& getDna() const { return dna; }
+
+    /*
+     imi da cppcheck peste cap ca nu o folosesc
     [[maybe_unused]] const std::string& getName() const { return name; }
+    */
+
 
     // operator<<
     friend std::ostream& operator<<(std::ostream& os, const Organism& o) {
