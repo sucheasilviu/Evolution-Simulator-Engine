@@ -247,7 +247,6 @@ int main() {
 
     // citim cateva gene de baza pentru primele organisme
     for (int i = 0; i < nrOrganismeInitiale; ++i) {
-        float viteza, vedere, putere;
         std::cout << "Introduceti 3 valori genetice (Viteza Vedere Putere) pentru Organismul " << i << ": ";
         std::cin >> viteza >> vedere >> putere; // citite din tastatura.txt
 
