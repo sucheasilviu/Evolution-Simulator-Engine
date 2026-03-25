@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include "Example.h"
 
 // 1. Clasa Gene (Nivelul de baza)
 class Gene {
@@ -287,6 +288,9 @@ int main() {
     std::cout << earth;
 
     std::cout << "\nSimulare incheiata cu succes. Demo complet.\n"; 
+
+    Example ex;
+    ex.g();
 
 
    
