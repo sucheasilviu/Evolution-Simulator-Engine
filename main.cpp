@@ -20,7 +20,10 @@ public:
 
     // getteri const
     float getValue() const { return value; }
+
+    /* 
     const std::string& getName() const { return traitName; }
+    */
 
     // setteri
     void setValue(float val) { value = val; }
