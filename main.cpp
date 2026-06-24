@@ -42,6 +42,7 @@ int main() {
         // Instantierea 2
         int varstaGeneratie = clampValue<int>(150, 0, 100); // Se va plafona la 100
 
+        std::cout << "\nVarsta maxima a generatiei plafonata la: " << varstaGeneratie << "\n";
         std::cout << "\nRata de mutatie sigura aplicata: " << safeMutationRate << "\n";
         earth.simulateGeneration(safeMutationRate);
 
