@@ -8,12 +8,12 @@
 int main() {
     std::cout << "=== Evolution Simulator Engine v3.0 ===\n";
 
-
-    // instantierei
-    MetricsTracker<float> fitnessHistory;
-    MetricsTracker<int> populationHistory;
-
     try {
+        // Instantierea 1
+        MetricsTracker<float> fitnessHistory;
+        // Instantierea 2
+        MetricsTracker<int> populationHistory;
+
         Environment earth(0);
 
         // Folosire Factory Method pentru crearea trasaturilor
@@ -28,11 +28,20 @@ int main() {
         Organism org1("Adam", adn1);
         Organism org2("Eva", adn2);
 
+        // Calculam scorurile de fitness inainte de inregistrare sau diagnosticare
+        org1.calculateSurvivalScore();
+        org2.calculateSurvivalScore();
+
+
+        std::cout << "\n--- Diagnostic Adam ---\n";
+        org1.printDiagnostics();
+
         earth.addOrganism(org1);
         earth.addOrganism(org2);
 
-        // Inregistram populatia initiala
+
         populationHistory.addRecord(Organism::getTotalOrganisms());
+        fitnessHistory.addRecord(org1.getFitness());
 
         // Demonstrare INSTANTIERE FUNCTIE SABLON
         // Instantierea 1
@@ -48,6 +57,7 @@ int main() {
 
         std::cout << "\n--- Metrici Simulare ---\n";
         populationHistory.printHistory("Dimensiune Populatie");
+        fitnessHistory.printHistory("Istoric Fitness Adam");
 
     }
     catch (const EvolutionException& e) {
